@@ -1,13 +1,23 @@
 import React from 'react';
 
-function Pagination() {
+import _ from 'lodash';
+
+function Pagination(props) {
+
+  const { itemsCount, pageSize, currentPage, onPageChange } = props;
+
+  const pageCount = Math.ceil((itemsCount / pageSize));
+
+  if (pageCount === 1) return null;
+
+  const pages = _.range(1, pageCount + 1);
+
 
   return (
-    <nav aria-label="Page navigation example">
+    <nav>
       <ul className="pagination">
-        <li className="page-item"><a className="page-link">1</a></li>
-        <li className="page-item"><a className="page-link">2</a></li>
-        <li className="page-item"><a className="page-link">3</a></li>
+        {pages.map(page => <li onClick={() => onPageChange(page)}
+          className={page === currentPage ? "page-item active" : "page-item"}><a className="page-link">{page}</a></li>)}
       </ul>
     </nav>
   )
