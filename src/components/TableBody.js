@@ -5,9 +5,6 @@ import { MdDelete } from 'react-icons/md';
 
 class TableBody extends Component {
 
-  constructor() {
-    super()
-  }
 
   render() {
     const { customers, handleDelete } = this.props;
