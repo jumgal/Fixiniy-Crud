@@ -4,7 +4,7 @@ const AddButton = (props) => {
 
   return (
     <div style={{ margin: '16px' }}>
-      <button type="button" className="btn btn-success">Add New Customer</button>
+      <button type="button" className="btn btn-success btn-lg">Add New Customer</button>
     </div>
 
   )

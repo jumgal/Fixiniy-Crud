@@ -16,7 +16,7 @@ function Pagination(props) {
   return (
     <nav>
       <ul className="pagination">
-        {pages.map(page => <li key={page} onClick={() => onPageChange(page)}
+        {pages.map(page => <li key={page} style={{ cursor: "pointer" }} onClick={() => onPageChange(page)}
           className={page === currentPage ? "page-item active" : "page-item"}><a className="page-link">{page}</a></li>)}
       </ul>
     </nav>
